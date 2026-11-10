@@ -25,10 +25,11 @@ jobs:
 
     - name: Install system dependencies
       run: |
+        sudo dpkg --add-architecture i386
         sudo apt-get update
         sudo apt-get install -y \
             git zip unzip openjdk-11-jdk autoconf automake libtool libtool-bin pkg-config \
-            zlib1g-dev libncurses-dev cmake libffi-dev libssl-dev libltdl-dev
+            zlib1g-dev libncurses5:i386 libstdc++6:i386 zlib1g:i386 cmake libffi-dev libssl-dev libltdl-dev
 
     - name: Install Python dependencies
       run: |
@@ -38,11 +39,10 @@ jobs:
 
     - name: Build APK with Buildozer
       run: |
-        buildozer android debug
+        buildozer -v android debug
 
     - name: Upload APK Artifact
       uses: actions/upload-artifact@v4
       with:
         name: package
         path: bin/*.apk
-        
