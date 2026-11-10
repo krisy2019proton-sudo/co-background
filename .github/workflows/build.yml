@@ -8,13 +8,14 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       
       - name: Build with Buildozer
         uses: ArtemSBulgakov/buildozer-action@v1
         id: buildozer
         with:
-            command: buildozer android debug
+          command: buildozer android debug
+          buildozer_version: stable
             
       - name: Upload APK Artifact
         uses: actions/upload-artifact@v4
