@@ -10,7 +10,7 @@ orientation = portrait
 fullscreen = 0
 android.permissions = FOREGROUND_SERVICE, POST_NOTIFICATIONS, WAKE_LOCK, INTERNET, ACCESS_WIFI_STATE, ACCESS_NETWORK_STATE
 
-# Stable Android SDK and NDK configurations
+# Stable Android SDK and NDK configurations for Java 11 compatibility
 android.api = 33
 android.minapi = 21
 android.ndk = 25b
@@ -19,5 +19,5 @@ android.sdk = 33
 # Automatically accept SDK licenses for CI/CD automation
 android.accept_sdk_license = True
 
-# Background service runner
+# Background service runner (if applicable)
 services = worker:service.py
