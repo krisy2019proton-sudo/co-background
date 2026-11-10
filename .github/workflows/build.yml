@@ -24,7 +24,8 @@ jobs:
             git zip unzip openjdk-17-jdk autoconf automake libtool libtool-bin pkg-config \
             zlib1g-dev libncurses-dev cmake libffi-dev libssl-dev libltdl-dev
         python -m pip install --upgrade pip
-        python -m pip install buildozer cython==0.29.36
+        # Crucial: cython must be <3.0 for Kivy/Buildozer build stability
+        python -m pip install "cython<3.0" buildozer
         echo "$HOME/.local/bin" >> $GITHUB_PATH
 
     - name: Build APK with Buildozer
