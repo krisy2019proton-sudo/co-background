@@ -23,6 +23,10 @@ jobs:
         sudo apt-get install -y \
             git zip unzip openjdk-17-jdk autoconf libtool pkg-config \
             zlib1g-dev libncurses-dev cmake libffi-dev libssl-dev
+        python -m pip install --upgrade pip
+        python -m pip install buildozer cython==0.29.36
+        # Add local bin to path so buildozer can be found
+        echo "$HOME/.local/bin" >> $GITHUB_PATH
 
     - name: Build APK with Buildozer
       run: |
