@@ -12,5 +12,8 @@ android.permissions = FOREGROUND_SERVICE, POST_NOTIFICATIONS, WAKE_LOCK, INTERNE
 android.api = 33
 android.minapi = 21
 
+# Automatically accept Android SDK licenses for CI/CD automation
+android.accept_sdk_license = True
+
 # Include both your worker script and the background service runner
 services = worker:service.py
