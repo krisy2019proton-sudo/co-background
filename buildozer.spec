@@ -9,11 +9,15 @@ requirements = python3,kivy,pyjnius
 orientation = portrait
 fullscreen = 0
 android.permissions = FOREGROUND_SERVICE, POST_NOTIFICATIONS, WAKE_LOCK, INTERNET, ACCESS_WIFI_STATE, ACCESS_NETWORK_STATE
+
+# Stable Android SDK and NDK configurations
 android.api = 33
 android.minapi = 21
+android.ndk = 25b
+android.sdk = 33
 
-# Automatically accept Android SDK licenses for CI/CD automation
+# Automatically accept SDK licenses for CI/CD automation
 android.accept_sdk_license = True
 
-# Include both your worker script and the background service runner
+# Background service runner
 services = worker:service.py
