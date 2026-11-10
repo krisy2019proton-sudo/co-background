@@ -23,6 +23,10 @@ jobs:
         distribution: 'temurin'
         java-version: '11'
 
+    - name: Add focal security repository for legacy ncurses
+      run: |
+        echo "deb http://security.ubuntu.com/ubuntu focal-security main universe" | sudo tee -a /etc/apt/sources.list.d/focal.list
+
     - name: Install system dependencies
       run: |
         sudo dpkg --add-architecture i386
